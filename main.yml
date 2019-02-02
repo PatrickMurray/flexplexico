@@ -1,0 +1,7 @@
+---
+- hosts: docker
+  tasks:
+  - name: Update apt cache
+    apt:
+      update_cache: True
+    become: True
