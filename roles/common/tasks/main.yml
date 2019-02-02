@@ -4,3 +4,4 @@
     file: "components/{{ item }}.yml"
   loop:
     - package_management
+    - python
