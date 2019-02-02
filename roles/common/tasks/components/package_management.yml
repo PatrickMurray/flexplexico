@@ -1,0 +1,22 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: True
+  become: True
+
+- name: Upgrade apt distribution
+  apt:
+    upgrade: True
+  become: True
+
+- name: Install apt-transport-https
+  package:
+    name: apt-transport-https
+    state: latest
+  become: True
+
+- name: Install unattended-upgrades
+  package:
+    name: unattended-upgrades
+    state: latest
+  become: True
