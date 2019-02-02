@@ -4,4 +4,5 @@
     file: "components/{{ item }}.yml"
   loop:
     - package_management
+    - ca_certificates
     - python

@@ -15,6 +15,11 @@
     state: latest
   become: True
 
+- name: Install software-properties-common
+  package:
+    name: software-properties-common
+  become: True
+
 - name: Install unattended-upgrades
   package:
     name: unattended-upgrades
