@@ -1,0 +1,24 @@
+---
+- name: Create /plex-volumes directory
+  file:
+    path: /plex-volumes
+    state: directory
+  become: True
+
+- name: Create /plex-volumes/config directory
+  file:
+    path: /plex-volumes/config
+    state: directory
+  become: True
+
+- name: Create /plex-volumes/transcode directory
+  file:
+    path: /plex-volumes/transcode
+    state: directory
+  become: True
+
+- name: Create /plex-volumes/data directory
+  file:
+    path: /plex-volumes/data
+    state: directory
+  become: True

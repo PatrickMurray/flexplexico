@@ -1,0 +1,14 @@
+---
+- name: Create plex docker container
+  docker_container:
+    name: plex
+    image: plexinc/pms-docker
+    network_mode: host
+    restart_policy: always
+    env:
+      TZ: America/New_York
+    volumes:
+      - /plex-volumes/config:/config
+      - /plex-volumes/transcode:/transcode
+      - /plex-volumes/data:/data
+  become: True

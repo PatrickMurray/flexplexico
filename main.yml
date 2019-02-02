@@ -4,3 +4,11 @@
   - name: Include common role
     include_role:
       name: common
+
+  - name: Include docker role
+    include_role:
+      name: docker
+
+  - name: Include plex role
+    include_role:
+      name: plex
