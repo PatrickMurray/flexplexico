@@ -1,0 +1,14 @@
+---
+- name: Create NFS mount point
+  file:
+    path: /mnt/nfs
+    state: directory
+  become: True
+
+- name: Mount NFS share
+  mount:
+    name: /mnt/nfs
+    state: mounted
+    src: "{{ hostvars[groups['freenas'][0]]['inventory_hostname'] }}:/mnt/Storage/Flexplexico"
+    fstype: nfs
+  become: True
