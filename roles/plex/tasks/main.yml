@@ -3,5 +3,6 @@
   include_tasks:
     file: "components/{{ item }}.yml"
   loop:
-    - directories
+    - volumes
+    - mount
     - container

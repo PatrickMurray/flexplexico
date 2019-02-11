@@ -10,5 +10,5 @@
     volumes:
       - /plex-volumes/config:/config
       - /plex-volumes/transcode:/transcode
-      - /plex-volumes/data:/data
+      - /plex-volumes/data:/data:ro
   become: True

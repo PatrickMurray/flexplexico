@@ -1,14 +1,17 @@
 ---
-- name: Create NFS mount point
-  file:
-    path: /mnt/nfs
-    state: directory
+- name: Install nfs-common
+  package:
+    name: nfs-common
+    state: latest
   become: True
 
 - name: Mount NFS share
   mount:
-    name: /mnt/nfs
+    name: /plex-volumes/data
     state: mounted
+    boot: True
     src: "{{ hostvars[groups['freenas'][0]]['inventory_hostname'] }}:/mnt/Storage/Flexplexico"
     fstype: nfs
+    opts: defaults,ro
+#    nobootwait
   become: True

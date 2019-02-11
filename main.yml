@@ -5,10 +5,6 @@
     include_role:
       name: common
 
-  - name: Include NFS share role
-    include_role:
-      name: nfs
-
   - name: Include docker role
     include_role:
       name: docker
