@@ -1,0 +1,24 @@
+---
+- name: Create /docker-volumes/gitlab directory
+  file:
+    path: /docker-volumes/gitlab
+    state: directory
+  become: True
+
+- name: Create /docker-volumes/gitlab/config directory
+  file:
+    path: /docker-volumes/gitlab/config
+    state: directory
+  become: True
+
+- name: Create /docker-volumes/gitlab/logs directory
+  file:
+    path: /docker-volumes/gitlab/config
+    state: directory
+  become: True
+
+- name: Create /docker-volumes/gitlab/data Directory
+  file:
+    path: /docker-volumes/gitlab/data
+    state: directory
+  become: True

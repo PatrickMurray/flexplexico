@@ -9,6 +9,14 @@
     include_role:
       name: docker
 
+  - name: Include grafana role
+    include_role:
+      name: grafana
+
   - name: Include plex role
     include_role:
       name: plex
+
+  - name: Include gitlab role
+    include_role:
+      name: gitlab

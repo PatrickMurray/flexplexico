@@ -1,23 +1,23 @@
 ---
-- name: Create /plex-volumes directory
+- name: Create /docker-volumes/plex directory
   file:
     path: /docker-volumes/plex
     state: directory
   become: True
 
-- name: Create /plex-volumes/config directory
+- name: Create /docker-volumes/plex/config directory
   file:
     path: /docker-volumes/plex/config
     state: directory
   become: True
 
-- name: Create /plex-volumes/transcode directory
+- name: Create /docker-volumes/plex/transcode directory
   file:
     path: /docker-volumes/plex/transcode
     state: directory
   become: True
 
-- name: Create /plex-volumes/data directory
+- name: Create /docker-volumes/plex/data directory
   file:
     path: /docker-volumes/plex/data
     state: directory

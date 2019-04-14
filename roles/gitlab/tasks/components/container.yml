@@ -1,0 +1,16 @@
+---
+- name: Create gitlab docker container
+  docker_container:
+    name: gitlab
+    image: gitlab/gitlab-ce:latest
+    state: started
+    restart: True
+    ports:
+      - "2022:22"
+      - "8080:80"
+      - "443:443"
+    volumes:
+      - /docker-volumes/gitlab/config:/etc/gitlab
+      - /docker-volumes/gitlab/logs:/var/log/gitlab
+      - /docker-volumes/gitlab/data:/var/opt/gitlab
+  become: True

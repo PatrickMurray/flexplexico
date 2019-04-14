@@ -1,10 +1,4 @@
 ---
-- name: Pull pms-docker image
-  docker_image:
-    name: plexinc/pms-docker:plexpass
-  become: True
-
-
 - name: Create plex docker container
   docker_container:
     name: plex
