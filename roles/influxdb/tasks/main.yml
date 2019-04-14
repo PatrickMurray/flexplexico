@@ -1,0 +1,7 @@
+---
+- name: Include components
+  include_tasks:
+    file: "components/{{ item }}.yml"
+  loop:
+    - volumes
+    - container

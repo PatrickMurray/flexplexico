@@ -1,5 +1,7 @@
 ---
 - hosts: docker
+  vars_files:
+    - secrets.yml
   tasks:
   - name: Include common role
     include_role:
@@ -8,6 +10,10 @@
   - name: Include docker role
     include_role:
       name: docker
+
+  - name: Include influxdb role
+    include_role:
+      name: influxdb
 
   - name: Include grafana role
     include_role:

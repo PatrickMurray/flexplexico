@@ -1,0 +1,6 @@
+---
+- name: Create /docker-volumes/influxdb directory
+  file:
+    path: /docker-volumes/influxdb
+    state: directory
+  become: True
