@@ -15,6 +15,10 @@
     include_role:
       name: influxdb
 
+  - name: Include telegraf role
+    include_role:
+      name: telegraf
+
   - name: Include grafana role
     include_role:
       name: grafana

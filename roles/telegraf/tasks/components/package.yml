@@ -1,0 +1,30 @@
+---
+- name: Add telegraf PGP public key
+  apt_key:
+    url: https://repos.influxdata.com/influxdb.key
+  become: True
+
+- name: Add docker apt repository
+  apt_repository:
+    repo: "deb https://repos.influxdata.com/debian {{ ansible_distribution_release }} stable"
+    state: present
+    update_cache: True
+  become: True
+
+- name: Install telegraf
+  package:
+    name: telegraf
+    state: latest
+  become: True
+
+- name: Configure telegraf
+  template:
+    src: telegraf.conf
+    dest: /etc/telegraf/telegraf.conf
+  become: True
+
+- name: Restart telegraf service
+  service:
+    name: telegraf
+    state: restarted
+  become: True
