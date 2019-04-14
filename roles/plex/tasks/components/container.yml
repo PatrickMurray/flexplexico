@@ -1,8 +1,14 @@
 ---
+- name: Pull pms-docker image
+  docker_image:
+    name: plexinc/pms-docker:plexpass
+  become: True
+
+
 - name: Create plex docker container
   docker_container:
     name: plex
-    image: plexinc/pms-docker
+    image: plexinc/pms-docker:plexpass
     state: started
     restart: True
     network_mode: host
@@ -10,7 +16,7 @@
     env:
       TZ: America/New_York
     volumes:
-      - /plex-volumes/config:/config
-      - /plex-volumes/transcode:/transcode
-      - /plex-volumes/data:/data:ro
+      - /docker-volumes/plex/config:/config
+      - /docker-volumes/plex/transcode:/transcode
+      - /docker-volumes/plex/data:/data:ro
   become: True

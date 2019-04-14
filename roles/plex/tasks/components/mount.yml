@@ -7,7 +7,7 @@
 
 - name: Mount NFS share
   mount:
-    name: /plex-volumes/data
+    name: /docker-volumes/plex/data
     state: mounted
     boot: True
     src: "{{ hostvars[groups['freenas'][0]]['inventory_hostname'] }}:/mnt/Storage/Flexplexico"
